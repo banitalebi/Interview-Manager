@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Detail Candidate{% endblock %}
+
+{% block content %}
+    <h1>Detail Candidate</h1>
+        <table class="ui collapsing table">
+            <thead>
+              <tr>
+                <th>Candidate ID</th>
+                <th>{{candidate.id}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Full Name</td>
+                <td>{{candidate.full_name}}</td>
+              </tr>
+              <tr>
+                <td>Phone Number</td>
+                <td>{{candidate.phone_number_1}}</td>
+                <td>{{candidate.phone_number_2}}</td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td>{{candidate.email}}</td>
+              </tr>
+              <tr>
+                <td>Position</td>
+                <td>{{candidate.position}}</td>
+              </tr>
+              <tr>
+                <td>Status</td>
+                <td>{{candidate.status}}</td>
+              </tr>
+            </tbody>
+            <tfoot>
+                <tr><th>Interview Date</th>
+                <th>{{candidate.interview_date}}</th>
+                <th></th>
+              </tr></tfoot>
+            </table>
+                    
+            <table class="ui striped table">
+                <thead>
+                  <tr>
+                    <th>Description</th>                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{candidate.description}}</td>                    
+                  </tr>                  
+                </tbody>      
+              </table>
+            
+              <a href="{% url 'edit_candidates' candidate.pk %}">
+                <button class="ui primary button">
+                  Update
+                </button>
+              </a>
+              <a href="{% url 'delete_candidates' candidate.pk %}">
+                <button class="ui button">
+                  Delete
+                </button>
+              </a>
+                   
+              
+            </div>        
+        </div>
+
+{% endblock %}

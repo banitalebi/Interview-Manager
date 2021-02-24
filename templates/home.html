@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <h1>Wellcome!</h1>
+  <p>This is the interview management service. 
+    You may <a href="{% url "register" %}">create an account</a> 
+    or <a href="{% url "login" %}">sign in</a>.
+  </p>
+  {% endblock %}
